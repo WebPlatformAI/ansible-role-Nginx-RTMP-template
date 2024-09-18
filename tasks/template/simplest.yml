@@ -1,5 +1,9 @@
 ---
 
+- name: Include vars from template
+  ansible.builtin.include_vars:
+    file: "{{ template }}/main.yml"
+
 - name: Template nginx.conf
   ansible.builtin.template:
     src: "{{ template }}/nginx.conf.j2"
