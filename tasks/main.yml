@@ -2,9 +2,9 @@
 # tasks file for try
 
 - name: include
-  include_tasks: "{{ t }}"
+  include_tasks: "{{ t }}/main.yml"
   loop:
-  - get/main.yml
-  - "tpl/{{ template }}.yml"
+  - get
+  - "tpl/{{ template }}"
   loop_control:
     loop_var: t

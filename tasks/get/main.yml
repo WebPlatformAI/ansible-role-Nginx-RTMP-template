@@ -1,4 +1,6 @@
-- name: get
-  include_tasks: "{{ item }}"
-  loop:
-  - IP.yml
+---
+
+- name: Get Desktop IP
+  set_fact:
+    desktop_ip: "{{ hostvars[item]['ansible_default_ipv4']['address'] }}"
+  with_items: "{{ groups['desktop'][0] }}"
