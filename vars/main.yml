@@ -1,0 +1,5 @@
+---
+deny_publish: none #all
+worker_processes: 1
+worker_connections: 1024
+error_log: "logs/error.log debug"

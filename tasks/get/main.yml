@@ -1,0 +1,4 @@
+- name: get
+  include_tasks: "{{ item }}"
+  loop:
+  - IP.yml

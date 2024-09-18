@@ -1,0 +1,10 @@
+---
+# tasks file for try
+
+- name: include
+  include_tasks: "{{ t }}"
+  loop:
+  - get/main.yml
+  - "template/{{ template }}.yml"
+  loop_control:
+    loop_var: t

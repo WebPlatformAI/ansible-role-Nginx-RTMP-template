@@ -1,0 +1,22 @@
+user www-data;
+worker_processes  {{ worker_processes }};
+
+error_log  {{ error_log }};
+
+events {
+    worker_connections  {{ worker_connections }};
+}
+
+rtmp {
+        server {
+                listen 1935;
+                chunk_size 4096;
+                allow publish 127.0.0.1;
+                deny publish {{ deny_publish }};
+
+                application live {
+                        live on;
+                        record off;
+                }
+        }
+}
