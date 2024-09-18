@@ -1,7 +1,6 @@
 ---
 
-- name: Get IP address of KVM host & interface
-  ansible.builtin.set_fact:
-    publish_address: "{{ ansible_default_ipv4.gateway }}"
-    other_fact: 
-  when: ansible_virtualization_type == "kvm"
+- name: Get Desktop IP
+  set_fact:
+    desktop_ip: "{{ hostvars[item]['ansible_default_ipv4']['address'] }}"
+  with_items: "{{ groups['desktop'][0] }}"

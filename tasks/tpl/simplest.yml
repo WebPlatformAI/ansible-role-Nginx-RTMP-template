@@ -1,10 +1,5 @@
 ---
 
-- name: Get Desktop IP
-  set_fact:
-    desktop_ip: "{{ hostvars[item]['ansible_default_ipv4']['address'] }}"
-  with_items: "{{ groups['desktop'][0] }}"
-
 - name: Include vars from template
   ansible.builtin.include_vars:
     file: "{{ template }}/main.yml"
