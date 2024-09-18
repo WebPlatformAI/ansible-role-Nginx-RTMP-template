@@ -1,5 +1,6 @@
 ---
-deny_publish: none #all
+deny_publish: all
 worker_processes: 1
 worker_connections: 1024
-error_log: "logs/error.log debug"
+error_log: "/var/log/nginx/error.log"
+#"logs/error.log debug"
