@@ -1,7 +1,13 @@
 ---
+allow_publish: "{{ desktop_ip }}"
+
 deny_publish: all
+
 worker_processes: 1
+
 worker_connections: 1024
+
 log_suffix: " debug"
+
 error_log: "/var/log/nginx/error.log"
 #"logs/error.log debug"
